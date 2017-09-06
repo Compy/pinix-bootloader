@@ -272,8 +272,8 @@ VOID FinishExternalScreen(VOID)
     }
 
     // Reset the screen resolution, in case external program changed it....
-    SetupScreen();
     */
+    SetupScreen();
 
     // reset error flag
     haveError = FALSE;
