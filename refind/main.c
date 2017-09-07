@@ -175,7 +175,7 @@ REFIT_CONFIG GlobalConfig = { /* TextOnly = */ FALSE,
                               /* RequestedScreenHeight = */ 0,
                               /* BannerBottomEdge = */ 0,
                               /* RequestedTextMode = */ DONT_CHANGE_TEXT_MODE,
-                              /* Timeout = */ 20,
+                              /* Timeout = */ -1,
                               /* HideUIFlags = */ 0,
                               /* MaxTags = */ 0,
                               /* GraphicsFor = */ GRAPHICS_FOR_OSX,
@@ -1144,7 +1144,7 @@ VOID SetLoaderDefaults(LOADER_ENTRY *Entry, CHAR16 *LoaderPath, REFIT_VOLUME *Vo
         Entry->OSType = 'N';
         ShortcutLetter = 'N';
         MergeStrings(&OSIconName, L"network", L',');
-    } 
+    }
 
     if ((ShortcutLetter >= 'a') && (ShortcutLetter <= 'z'))
         ShortcutLetter = ShortcutLetter - 'a' + 'A'; // convert lowercase to uppercase
@@ -1585,7 +1585,7 @@ static VOID ScanNetboot() {
                 AddLoaderEntry(iPXEFileName, Location, NetVolume, TRUE);
                 MyFreePool(NetVolume);
             } // if support files exist and are valid
-    } 
+    }
 } // VOID ScanNetBoot()
 
 static VOID ScanEfiFiles(REFIT_VOLUME *Volume) {
@@ -1999,7 +1999,7 @@ static VOID ScanForTools(VOID) {
                 } // while
                 FileName = NULL;
                 break;
-            
+
             case TAG_NETBOOT:
                 j = 0;
                 while ((FileName = FindCommaDelimited(NETBOOT_NAMES, j++)) != NULL) {
