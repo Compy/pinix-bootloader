@@ -160,7 +160,7 @@ static REFIT_MENU_ENTRY MenuEntryRotateCsr = { L"Change SIP Policy", TAG_CSR_ROT
 
 REFIT_MENU_SCREEN MainMenu       = { L"Main Menu", NULL, 0, NULL, 0, NULL, 0, L"Automatic boot",
                                      L"Use arrow keys to move cursor; Enter to boot;",
-                                     L"Insert, Tab, or F2 for more options; Esc or Backspace to refresh" };
+                                     L"Insert, Tab, or F2 for more options; Esc or Backspace to refreshz" };
 static REFIT_MENU_SCREEN AboutMenu      = { L"About", NULL, 0, NULL, 0, NULL, 0, NULL, L"Press Enter to return to main menu", L"" };
 
 REFIT_CONFIG GlobalConfig = { /* TextOnly = */ FALSE,
@@ -2199,7 +2199,7 @@ efi_main (EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 
     InitScreen();
     WarnIfLegacyProblems();
-    MainMenu.TimeoutSeconds = GlobalConfig.Timeout;
+    MainMenu.TimeoutSeconds = -1;
 
     // disable EFI watchdog timer
     refit_call4_wrapper(BS->SetWatchdogTimer, 0x0000, 0x0000, 0x0000, NULL);
