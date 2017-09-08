@@ -111,7 +111,7 @@ VOID InitScreen(VOID)
 
     if (egHasGraphicsMode()) {
         egGetScreenSize(&UGAWidth, &UGAHeight);
-        AllowGraphicsMode = TRUE;
+        AllowGraphicsMode = FALSE;
     } else {
         AllowGraphicsMode = FALSE;
         egSetTextMode(GlobalConfig.RequestedTextMode);
