@@ -79,8 +79,8 @@ UINTN UGAHeight;
 BOOLEAN AllowGraphicsMode;
 BOOLEAN HaveResized = FALSE;
 
-EG_PIXEL StdBackgroundPixel  = { 0xbf, 0xbf, 0xbf, 0 };
-EG_PIXEL MenuBackgroundPixel = { 0xbf, 0xbf, 0xbf, 0 };
+EG_PIXEL StdBackgroundPixel  = { 0x0, 0x0, 0x0, 0 };
+EG_PIXEL MenuBackgroundPixel = { 0x0, 0x0, 0x0, 0 };
 EG_PIXEL DarkBackgroundPixel = { 0x0, 0x0, 0x0, 0 };
 
 static BOOLEAN GraphicsScreenDirty;
@@ -492,7 +492,7 @@ VOID BltClearScreen(BOOLEAN ShowBanner)
 
         // clear and draw banner
         if (GlobalConfig.ScreensaverTime != -1)
-           egClearScreen(&MenuBackgroundPixel);
+           egClearScreen(&Black);
         else
            egClearScreen(&Black);
 
@@ -508,7 +508,7 @@ VOID BltClearScreen(BOOLEAN ShowBanner)
 
     } else { // not showing banner
         // clear to menu background color
-        egClearScreen(&MenuBackgroundPixel);
+        egClearScreen(&Black);
     }
 
     GraphicsScreenDirty = FALSE;

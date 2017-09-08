@@ -70,6 +70,8 @@
 #define LibLocateProtocol EfiLibLocateProtocol
 #endif
 
+#define DISABLE_SCREEN
+
 // Console defines and variables
 
 static EFI_GUID ConsoleControlProtocolGuid = EFI_CONSOLE_CONTROL_PROTOCOL_GUID;
