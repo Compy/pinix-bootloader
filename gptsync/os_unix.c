@@ -165,6 +165,7 @@ UINTN input_boolean(CHARN *prompt, BOOLEAN *bool_out)
 
 void Print(wchar_t *format, ...)
 {
+  /*
     va_list par;
     char formatbuf[256];
     char buf[4096];
@@ -179,6 +180,7 @@ void Print(wchar_t *format, ...)
     va_end(par);
 
     printf("%s", buf);
+    */
 }
 
 //
