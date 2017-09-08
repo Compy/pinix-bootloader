@@ -813,6 +813,7 @@ VOID ReadConfig(CHAR16 *FileName)
 
     GlobalConfig.HideUIFlags = HIDEUI_FLAG_ALL;
     GlobalConfig.TextOnly = TRUE;
+    GlobalConfig.ScreensaverTime = -1;
 } /* VOID ReadConfig() */
 
 static VOID AddSubmenu(LOADER_ENTRY *Entry, REFIT_FILE *File, REFIT_VOLUME *Volume, CHAR16 *Title) {
